@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    {% if question %}
+        <head>Details page {{ question.id }}</head>
+    {% else %}
+        <head>Details page</head>
+    {% endif %}
+    <body>
+        {% if question %}
+            <p>Question ID: {{ question.id }} </p>
+            <p>Question Text: {{ question.question_text }}</p>
+            {% if options %}
+                {% for option in options %}
+                    <p>{{ option.choice_text }} with votes ({{ option.votes }})</p>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </body>
+</html>
