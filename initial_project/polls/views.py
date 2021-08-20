@@ -10,7 +10,7 @@ from .models import Question, Choice
 
 # Create your views here.
 class IndexView(generic.ListView):
-    """Index view of polls."""
+    """Index view of polls.9T-Yb82#Ka"""
 
     template_name = 'polls/index.html'
     context_object_name = "latest_question_list"
