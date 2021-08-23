@@ -20,9 +20,10 @@ def signup(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
+            user.save()
             login(request, user)
             messages.success(request, f"You've signed up in as {username}")
-            return redirect('registration:home', args=(username,))
+            return redirect('registration:home', username=username)
         else:
             messages.error(request, "Invalid user data")
     else:
@@ -42,7 +43,7 @@ def login_user(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You're now logged in as {username}")
-                return redirect('registration:home', args=(username,))
+                return redirect('registration:home', username=username)
             else:
                 messages.error(request, "Invalid username or password")
         else:

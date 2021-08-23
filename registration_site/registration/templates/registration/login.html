@@ -1,9 +1,6 @@
 <form method='post'>
     {% csrf_token %}
     {{ form }}
-    {% if form.errors %}
-        {{ form.errors }}
-    {% endif %}
     <input type="submit" name="login" value="Log in" />
 </form>
 <p>Forgot password! <a href="{% url 'registration:reset-password' %}">Reset</a> </p>
