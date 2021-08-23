@@ -31,7 +31,7 @@ def signup(request):
         "form": form,
     })
 
-def login(request):
+def login_user(request):
     """User signin or login view."""
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
