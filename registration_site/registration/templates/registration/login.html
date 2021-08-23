@@ -6,4 +6,5 @@
     {% endif %}
     <input type="submit" name="login" value="Log in" />
 </form>
+<p>Forgot password! <a href="{% url 'registration:reset-password' %}">Reset</a> </p>
 <p>New user? <a href="{% url 'registration:signup' %}">Sign up</a></p>

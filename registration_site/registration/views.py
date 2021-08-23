@@ -59,6 +59,9 @@ def logout_user(request):
     messages.info(request, "You have successfully logged out!")
     return redirect("registration:index")
 
+def reset_password(request):
+    """Reset user password."""
+    pass
 
 def home(request, username):
     """Homepage."""
