@@ -1,0 +1,9 @@
+<form method='post'>
+    {% csrf_token %}
+    {{ form }}
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
+    <input type="submit" name="login" value="Log in" />
+</form>
+<p>New user? <a href="{% url 'registration:signup' %}">Sign up</a></p>
